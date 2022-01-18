@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    --primary-color: #ffff;
+    --sec-color: #F3F1F5;
+    --hover-color: #11052C;
+    --color: #1f1f1f;
+    --text-color: #F3F1F5;
+}
+body[data-theme= "dark"]{
+    --primary-color: #0f0f0f;
+    --hover-color: #EDEDED;
+    --text-color: #1f1f1f;
+    --sec-color: #1a1a1a;
+    --color: #f0f0f0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--primary-color);
+    color: var(--color);
+}
+.case {
+    width: 350px;
+    height: 350px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.151);
+    background: var(--sec-color);
+    border-radius: 10px;
+}
+.case img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.btn{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 1em;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.151);
+    cursor: pointer;
+    background: var(--sec-color);
+    color: var(--color);
+    transition: all .4s;
+}
+.btn:hover{
+    background: var(--hover-color);
+    color: var(--text-color);
+}
+
+/* Icons Social Media */
+
+.container{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    color: white;
+    position: relative;
+    transition: all -4s;
+}
+a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #c21500, #ffc500);
+    transform: scale(0.2, 1.05);
+    transition: transform .4s;
+}
+a:hover::before{
+    transform: scale(1, 0.2);
+}
+i{
+    background: rgba(255, 255, 255, 0);
+    padding: 10%;
+    backdrop-filter: blur(15px);
+    filter: drop-shadow(0 0 20px black);
+    transition: all .4s;
+}
+a:hover i{
+    border-radius: 5px;
+}
+
+
+/* Dark Mode */
+.darkMode{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: translate(-50%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.darkMode .box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--sec-color);
+    transition: all .4s;
+}
+.darkMode input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    cursor: pointer;
+    z-index: 10;
+}
+.darkMode input:checked ~ .box{
+    transform: rotate(180deg);
+}
+.darkMode input:checked ~ .box i{
+    transform: rotate(180deg);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card{
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.144);
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.205),
+    inset 0 20px 20px rgba(253, 253, 253, 0.205);   
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.336);
+    position: relative;
+    transition: box-shadow .4s, color .8s, transform .4s;
+}
+.card:hover{
+    color: #ffffff;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.205),
+                inset 0 20px 10px rgba(255, 255, 255, 0.287),
+                inset 10px 0 20px rgb(255, 58, 58),
+                inset -20px 0 20px rgb(104, 255, 58),
+                inset -30px 0 20px rgb(71, 58, 255);
+    transform: translateY(-10px);
+}
